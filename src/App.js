@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import LoveBook from './LoveBook';
+import LockScreen from './LockScreen';
 
 function App() {
+  const [unlocked, setUnlocked] = useState(false);
+
+  const handleUnlock = (keyword) => {
+    if (keyword.toLowerCase() === 'srs') {
+      setUnlocked(true);
+    } else {
+      alert('Wrong keyword! Try again.');
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 style={{ textAlign: 'center', color: '#c2185b', fontFamily: 'cursive', marginTop: '20px' }}>
+        When Pagal Meets Idiot no.2
+      </h1>
+      {unlocked ? <LoveBook /> : <LockScreen onUnlock={handleUnlock} />}
     </div>
   );
 }
