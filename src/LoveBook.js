@@ -75,7 +75,7 @@ const LoveBook = () => {
     <div className="book-wrapper">
       <FloatingHearts />
       <audio autoPlay loop>
-        <source src="/bg-music.mp3" type="audio/mp3" />
+        <source src="humsafar.mpeg" type="audio/mp3" />
       </audio>
 
       <HTMLFlipBook
